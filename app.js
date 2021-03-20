@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const swaggerJSDoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
 
-const tosmmRoutes = require('./api/routes/cnc.js');
+const cncRoutes = require('./api/routes/cnc.js');
 
 const swaggerSpec = swaggerJSDoc({
     swaggerDefinition: {
@@ -42,8 +42,7 @@ app.use((req, res, next) => {
 });
 
 // Routes which should handle requests
-app.use('/tosmm', tosmmRoutes);
-app.use('/pokedc', pokedcRoutes);
+app.use('/cnc', cncRoutes);
 
 app.use((req, res, next) => {
     const error = new Error('Not found');

@@ -10,7 +10,9 @@ let m_cncMode = {
     mode: 'MEM'
 }
 
-let m_fname = {};
+let m_fname = {
+    fname: 'O0001.nc'
+};
 
 /****************************************************/
 //                    G E T                         //
@@ -56,6 +58,24 @@ router.get('/status', (req, res, next) => {
  */
 router.get('/mode', (req, res, next) => {
     res.status(200).json(m_cncMode);
+});
+
+/**
+ * @swagger
+ *
+ * /cnc/fname:
+ *   get:
+ *     tags:
+ *       - CNC
+ *     description: 取得CNC目前加工程式名稱
+ *     produces:
+ *       - application/json
+ *     responses:
+ *       200:
+ *         description: OK
+ */
+ router.get('/fname', (req, res, next) => {
+    res.status(200).json(m_fname);
 });
 
 /****************************************************/
