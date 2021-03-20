@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const swaggerJSDoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
 
-const cncRoutes = require('./api/routes/cnc.js');
+const cncRoutes = require('./api/routes/milling.js');
 
 const swaggerSpec = swaggerJSDoc({
     swaggerDefinition: {
@@ -14,7 +14,7 @@ const swaggerSpec = swaggerJSDoc({
         info: {
             title: 'FakeDevice API',
             version: '1.0.0',
-            description: 'Generate FakeDevice API document with swagger'
+            description: 'FakeDevice API document'
         }
     },
     apis: ['./api/routes/*.js']
@@ -42,7 +42,7 @@ app.use((req, res, next) => {
 });
 
 // Routes which should handle requests
-app.use('/api/cnc', cncRoutes);
+app.use('/api/milling', cncRoutes);
 
 app.use((req, res, next) => {
     const error = new Error('Not found');

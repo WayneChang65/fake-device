@@ -47,18 +47,18 @@ let m_spindleSpeed = {
 
 router.get('/', (req, res, next) => {
     res.status(200).json({
-        message: 'Handling GET requests to /api/cnc'
+        message: 'Handling GET requests to /api/milling'
     });
 });
 
 /**
  * @swagger
  *
- * /cnc/status:
+ * /api/milling/status:
  *   get:
  *     tags:
- *       - CNC
- *     description: 取得CNC狀態
+ *       - Milling
+ *     description: 取得銑床控制器狀態
  *     produces:
  *       - application/json
  *     responses:
@@ -72,11 +72,11 @@ router.get('/status', (req, res, next) => {
 /**
  * @swagger
  *
- * /cnc/mode:
+ * /api/milling/mode:
  *   get:
  *     tags:
- *       - CNC
- *     description: 取得CNC模式
+ *       - Milling
+ *     description: 取得銑床控制器目前模式
  *     produces:
  *       - application/json
  *     responses:
@@ -90,11 +90,11 @@ router.get('/mode', (req, res, next) => {
 /**
  * @swagger
  *
- * /cnc/fname:
+ * /api/milling/fname:
  *   get:
  *     tags:
- *       - CNC
- *     description: 取得CNC目前加工程式名稱
+ *       - Milling
+ *     description: 取得銑床目前加工程式名稱
  *     produces:
  *       - application/json
  *     responses:
@@ -108,11 +108,11 @@ router.get('/mode', (req, res, next) => {
 /**
  * @swagger
  *
- * /cnc/pos:
+ * /api/milling/pos:
  *   get:
  *     tags:
- *       - CNC
- *     description: 取得CNC所有座標(包含ABS, REL, MACH)
+ *       - Milling
+ *     description: 取得銑床控制器所有座標(包含ABS, REL, MACH)
  *     produces:
  *       - application/json
  *     responses:
@@ -126,11 +126,11 @@ router.get('/mode', (req, res, next) => {
 /**
  * @swagger
  *
- * /cnc/feedrate:
+ * /api/milling/feedrate:
  *   get:
  *     tags:
- *       - CNC
- *     description: 取得CNC的進給率(包含命令、目前、數值與百分比)
+ *       - Milling
+ *     description: 取得銑床控制器的進給率(包含命令、目前、數值與百分比)
  *     produces:
  *       - application/json
  *     responses:
@@ -144,11 +144,11 @@ router.get('/mode', (req, res, next) => {
 /**
  * @swagger
  *
- * /cnc/spindleSpeed:
+ * /api/milling/spindleSpeed:
  *   get:
  *     tags:
- *       - CNC
- *     description: 取得CNC的進給率(包含命令、目前、數值與百分比)
+ *       - Milling
+ *     description: 取得銑床控制器的進給率(包含命令、目前、數值與百分比)
  *     produces:
  *       - application/json
  *     responses:
@@ -166,11 +166,11 @@ router.get('/mode', (req, res, next) => {
 /**
  * @swagger
  *
- * /cnc/fname:
+ * /api/milling/fname:
  *   post:
  *     tags:
- *       - CNC
- *     description: 設定加工程式名稱
+ *       - Milling
+ *     description: 設定銑床控制器加工程式名稱
  *     produces:
  *       - application/json
  *     parameters:
@@ -191,7 +191,7 @@ router.post('/fname', (req, res, next) => {
     m_fname = fname;
 
     res.status(201).json({
-        message: 'Handling POST requests to /api/cnc/fname',
+        message: 'Handling POST requests to /api/milling/fname',
         createdStatus: fname
     });
 });
