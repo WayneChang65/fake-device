@@ -42,7 +42,7 @@ app.use((req, res, next) => {
 });
 
 // Routes which should handle requests
-app.use('/cnc', cncRoutes);
+app.use('/api/cnc', cncRoutes);
 
 app.use((req, res, next) => {
     const error = new Error('Not found');
