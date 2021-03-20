@@ -51,110 +51,26 @@ router.get('/', (req, res, next) => {
     });
 });
 
-/**
- * @swagger
- *
- * /api/milling/status:
- *   get:
- *     tags:
- *       - Milling
- *     description: 取得銑床控制器狀態
- *     produces:
- *       - application/json
- *     responses:
- *       200:
- *         description: OK
- */
 router.get('/status', (req, res, next) => {
     res.status(200).json(m_cncStatus);
 });
 
-/**
- * @swagger
- *
- * /api/milling/mode:
- *   get:
- *     tags:
- *       - Milling
- *     description: 取得銑床控制器目前模式
- *     produces:
- *       - application/json
- *     responses:
- *       200:
- *         description: OK
- */
 router.get('/mode', (req, res, next) => {
     res.status(200).json(m_cncMode);
 });
 
-/**
- * @swagger
- *
- * /api/milling/fname:
- *   get:
- *     tags:
- *       - Milling
- *     description: 取得銑床目前加工程式名稱
- *     produces:
- *       - application/json
- *     responses:
- *       200:
- *         description: OK
- */
  router.get('/fname', (req, res, next) => {
     res.status(200).json(m_fname);
 });
 
-/**
- * @swagger
- *
- * /api/milling/pos:
- *   get:
- *     tags:
- *       - Milling
- *     description: 取得銑床控制器所有座標(包含ABS, REL, MACH)
- *     produces:
- *       - application/json
- *     responses:
- *       200:
- *         description: OK
- */
  router.get('/pos', (req, res, next) => {
     res.status(200).json(m_pos);
 });
 
-/**
- * @swagger
- *
- * /api/milling/feedrate:
- *   get:
- *     tags:
- *       - Milling
- *     description: 取得銑床控制器的進給率(包含命令、目前、數值與百分比)
- *     produces:
- *       - application/json
- *     responses:
- *       200:
- *         description: OK
- */
  router.get('/feedrate', (req, res, next) => {
     res.status(200).json(m_feedrate);
 });
 
-/**
- * @swagger
- *
- * /api/milling/spindleSpeed:
- *   get:
- *     tags:
- *       - Milling
- *     description: 取得銑床控制器的進給率(包含命令、目前、數值與百分比)
- *     produces:
- *       - application/json
- *     responses:
- *       200:
- *         description: OK
- */
  router.get('/spindleSpeed', (req, res, next) => {
     res.status(200).json(m_spindleSpeed);
 });
@@ -163,26 +79,6 @@ router.get('/mode', (req, res, next) => {
 //                    P O S T                       //
 /****************************************************/
 
-/**
- * @swagger
- *
- * /api/milling/fname:
- *   post:
- *     tags:
- *       - Milling
- *     description: 設定銑床控制器加工程式名稱
- *     produces:
- *       - application/json
- *     parameters:
- *       - name: fname
- *         description: 加工程式名稱
- *         in: formData
- *         required: true
- *         type: string
- *     responses:
- *       201:
- *         description: OK
- */
 router.post('/fname', (req, res, next) => {
     const fname = {
         fname: req.body.fname
@@ -240,6 +136,5 @@ setInterval(() => {
     m_spindleSpeed.cmd.value = basic_f.getRandom(8, 12) * 1000; // 8000-12000 rpm
     m_spindleSpeed.cmd.percent = basic_f.getRandom(0, 100);
 }, 10000);    // 10s
-
 
 module.exports = router;
