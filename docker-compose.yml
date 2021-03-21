@@ -9,7 +9,7 @@ services:
   nginx:
       image: nginx:alpine
       ports:
-        - 80:80
+        - 8008:80
       volumes:
         - ./web_ui:/usr/share/nginx/html
         - ./d_volumes/nginx/conf/nginx.conf:/etc/nginx/nginx.conf

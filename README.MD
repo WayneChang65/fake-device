@@ -26,7 +26,7 @@
   ```
   5. 在browser(firefox, chrome,...)打以下網址，即可看到fake-device的webUI。
   ```
-  http://localhost
+  http://localhost:8008
   ```
 
 * **方式二：使用Docker執行**。安裝Docker以及docker-compose(1.27.4以上)
@@ -47,6 +47,6 @@
   ![image](https://raw.githubusercontent.com/WayneChang65/fake-device/master/img/api.jpg)  
   5. 在browser(firefox, chrome,...)打以下網址，即可看到fake-device的webUI。
   ```
-  http://localhost
+  http://localhost:8008
   ```
   ![image](https://raw.githubusercontent.com/WayneChang65/fake-device/master/img/webui.jpg)  

@@ -1,4 +1,4 @@
-let m_url_hserver = "http://localhost:3338";
+let m_url_hserver = "http://" + location.host.split(':')[0] + ":3338";
 let m_settings = {
         "url": m_url_hserver + "",
         "method": "GET",
