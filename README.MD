@@ -14,7 +14,7 @@
   ```
   cd fake-device
   npm install
-  node start
+  npm start
   ```
   3. 在browser(firefox, chrome,...)打以下網址，即可看到以Swagger呈現的fake-device WEB API了。
   ```
